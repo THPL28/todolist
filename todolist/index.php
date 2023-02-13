@@ -1,17 +1,17 @@
 
 <?php 
-    // initialize errors variable
+    // inicializa variavel erro
 	$errors = "";
     
 
-	// connect to database
+	// conecta com banco de dados
 	$db = mysqli_connect("localhost", "root", "", "todo");
 
     
-	// insert a quote if submit button is clicked
+	// insere a tarefa se o formulario foi enviado
 	if (isset($_POST['submit'])) {
 		if (empty($_POST['tarefa'])) {
-			$errors = "You must fill in the task";
+			$errors = "Erro ao adicionar tarefa";
 		}else{
 			 $tarefa = $_POST['tarefa'];
 			$sql = "INSERT INTO tarefa (tarefa) VALUES ('$tarefa')";
